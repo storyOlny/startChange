@@ -11,4 +11,6 @@ public interface LifeService {
 
     LifeResult chooseLife(int number);
 
+    Integer insertLife(String description);
+
 }

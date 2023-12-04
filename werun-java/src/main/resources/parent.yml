@@ -1,0 +1,5 @@
+#业务配置项
+baidu.test:
+  appid: "44282772"
+  apiKey: "4ie1GcEm2bWTHugEAACo9G1U"
+  secretKey: "Wl2AQhXu8bWVFT4YqloyXOwkuPONojT1"

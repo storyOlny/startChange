@@ -9,19 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @program:
  * @author: jyz
- * @create: 2023-12-04 13:24
+ * @create: 2023-12-04 15:02
  */
 @RestController
-public class ChoseController {
-
+public class InsertController {
     @Autowired
     private LifeService lifeService;
 
-    @RequestMapping("/test")
-    public String welcome(Integer number) {
-        LifeResult lifeResult = lifeService.chooseLife(number);
+    @RequestMapping("/insert")
+    public String welcome(String description) {
+        Integer result = lifeService.insertLife(description);
 
-        return null == lifeResult?"你选择的是无效的":lifeResult.getDescription();
+        return result == 1 ? "插入成功！" : "插入失败！";
     }
-
 }

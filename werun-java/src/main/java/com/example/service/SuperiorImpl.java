@@ -20,4 +20,9 @@ public class SuperiorImpl implements LifeService {
     public LifeResult chooseLife(int number) {
         return lifeDao.getLife(number);
     }
+
+    @Override
+    public Integer insertLife(String description) {
+        return lifeDao.insertLife(description);
+    }
 }

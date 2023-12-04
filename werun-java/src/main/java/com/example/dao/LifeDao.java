@@ -10,4 +10,5 @@ public interface LifeDao {
 
     LifeResult getLife(@Param("id") int id);
 
+    Integer insertLife(@Param("description") String description);
 }
