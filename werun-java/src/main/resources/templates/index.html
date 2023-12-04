@@ -2,19 +2,38 @@
 <html>
 <head>
     <title>选择人生</title>
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        function insert() {
+            var description = document.getElementById("description").value;
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: '/insert',
+                contentType: "application/json",
+                data: JSON.stringify({
+                    "description": description
+                }),
+                success: function (result) {
+                    console.log("data is :" + result)
+                    alert(result)
 
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <form action="http://127.0.0.1:8080/test" target="_blank">
-    <label for="ipaddr">选择的标号</label>
+    <label for="select">选择的标号</label>
     <input type="text" id="select" name="number"><br>
-    <input type="submit" value="提交">
+    <input type="submit" value="提交" formmethod="get">
 </form>
 
-<form action="http://127.0.0.1:8080/insert" target="_blank">
-    <label for="ipaddr">人生类型</label>
-    <input type="text" id="ipaddr" name="description"><br>
-    <input type="submit" value="提交">
+<form action="" target="_blank" id="insert">
+    <label for="description">人生类型</label>
+    <input type="text" id="description" name="description"><br>
+    <input type="button" value="提交" onclick="insert();">
 </form>
 </body>
 
